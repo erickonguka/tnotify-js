@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TNotify Demo</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+  <!-- Notification Container -->
+  <div id="tnotify-container" class="fixed top-4 right-4 space-y-2 z-50"></div>
+
+  <!-- Demo Controls -->
+  <div class="space-x-4 text-center">
+    <!-- Basic Success -->
+    <button onclick="TNotify.show({ type: 'success', content: 'Task completed!' })" class="px-4 py-2 bg-blue-500 rounded">Basic Success</button>
+    <!-- Success with Header and Color -->
+    <button onclick="TNotify.show({ type: 'success', header: 'Success', content: 'Task done!', bgColor: 'bg-green-500', textColor: 'text-white' })" class="px-4 py-2 bg-blue-500 rounded">Styled Success</button>
+    <!-- Basic Failure -->
+    <button onclick="TNotify.show({ type: 'failure', content: 'Task failed.' })" class="px-4 py-2 bg-blue-500 rounded">Basic Failure</button>
+    <!-- Failure with Custom Timeout -->
+    <button onclick="TNotify.show({ type: 'failure', header: 'Error', content: 'Critical error!', bgColor: 'bg-red-500', timeout: 2000 })" class="px-4 py-2 bg-blue-500 rounded">Fast Failure</button>
+    <!-- Basic Info -->
+    <button onclick="TNotify.show({ type: 'info', content: 'Heads up!' })" class="px-4 py-2 bg-blue-500 rounded">Basic Info</button>
+    <!-- Info with No Timeout -->
+    <button onclick="TNotify.show({ type: 'info', header: 'Info', content: 'Sticky note.', bgColor: 'bg-blue-600', textColor: 'text-yellow-200', timeout: 0 })" class="px-4 py-2 bg-blue-500 rounded">Sticky Info</button>
+    <!-- Clear All -->
+    <button onclick="TNotify.clear()" class="px-4 py-2 bg-gray-500 rounded">Clear All</button>
+  </div>
+
+  <!-- Load the TNotify Library -->
+  <script src="tnotify.js"></script>
+</body>
+</html>
